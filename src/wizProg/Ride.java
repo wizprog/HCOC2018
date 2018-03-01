@@ -1,11 +1,13 @@
 package wizProg;
 
 public class Ride {
-	
-	int x, y , x1 , y1, startTime, endTime;
+
+	int x, y, x1, y1, startTime, endTime;
 	boolean done;
-	
-	public Ride(int x , int y, int x1, int y1 , int startTime, int endTime) {
+	int id;
+	static int posId = 0;
+
+	public Ride(int x, int y, int x1, int y1, int startTime, int endTime) {
 		this.x = x;
 		this.y = y;
 		this.x1 = x1;
@@ -13,6 +15,15 @@ public class Ride {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		done = false;
+		id = posId++;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getX() {
@@ -70,6 +81,5 @@ public class Ride {
 	public void setDone(boolean done) {
 		this.done = done;
 	}
-	
-	
+
 }
